@@ -23,6 +23,9 @@ on:
     - cron: '0 8 * * MON,THU' # Run every Monday and Thursday at 08:00 UTC
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions:
+  contents: read
+
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -126,9 +129,9 @@ jobs:
           PRIVATE_KEY: 'LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2d0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktrd2dnU2xBZ0VBQW9JQkFRRE0yUzJaUDNnRUt0WUsKWDduYmF5RnJmeTZPbVJkYU1zOFRqamxwWDhFUmxZVGxISndOS0llU1pWcmcvRGV3d3Q5bkk3ZkE4THMwS1gxYQpvdU4xelZjVEpaOWphREVVU09WM0FXVjloWS8zNzgyaTU0RVNPWHcrMTVSZzRqNnlodkhsUm4vMHROMjdsU29MCmx0V1NWay95M29QWStaRmlyYW1OT0pMT1NnenFCK3dUWVhGNHF1aG4xOHpSUHdMVnp5V21ydlRFUTUySzFmMDIKQitBZ0JvVWEwZ0xDVVBUYkdxeEdlaWU1a1Zla3pkZVRpU240aDhVRUF6Tlc2RFJkN2t0Q1FKN0tacVNCaXczZwppN0x3aGl5OXNXcWs2MWx1YU5zcEdTNVc1eVBKL0psYWFUNDVPdENKVTFObWRzaktHUHhId3pnYWdkQ0lESkZPCjhQVHlGbnBEQWdNQkFBRUNnZ0VBQ0NPbytDblpidkQweUR5OWVjWnI4WVdBS0JKVkp6UlZuZ1ZNcXE4dlVLK00KTkQ1S3hRc1ROL0huQm9GL0JQcjVQWFBoM1R5emM0TWlnL05zN2tWV2JHQldVUERXNG1OekdxTm5rUEU1b3pSWQpDMXovZCtYbzFlWmk4dWFLYnpXRmJ3SzZHdE1FN0dzazNJa0Z1MmJLam0vZzlVSVZVTUp0dGpyRk9vVWV0ajNBCkpFWU5TZFplWFA2Z0RXeitlR0F6V2RXRnlNZ1hHT0hCanVMekt1S3kwb2xQaUFHRTJIMlhicHlCSEk2K09taHUKemU4VEhYSUg0YW1TOTdaN0ZlWTdZaDZPV0xoeVByaVh3VGZjNk1NaktubUdWOWQ3RytVanIyS3NVNGtYMG1MRApQKzhsS1NqVnFvUjF2YUswWEJiV0Fnd0kwbVd4TjhQMFZqSzRjMzJUNFFLQmdRRG9wZUJ6cE1xVjFlY24ydkFzCnkvRW5JeXdMcUlBVUZuRXRsRnlnMkVOM2ZZMDRkUTBqOWNzM0ZqbXNQK3grYjA1U2pJK05vVVQzRUowNC96Uk8KMFcvcmc0cEVTUlNDOHRtelliUGkycktrc2xLSDhmUWd2YzZKV1FVUThsWWx2elh6OTZiTFlxeFNtK0EwZ1Z4QQpEc2JNQk5NZDEzdk5Wa1VjTURsMnNveTNMUUtCZ1FEaGFQWnF4QzRxSVB1TlhOZE5EbExRVGZIWGxFMzRRTXVaCnNiM3J1NVdwbkJOdWpCU0xHREV2a0pvckprcUZ1b3VYUnVOOGIrd3BObi9lc0c3TjZyM3o5bHltRkI1VE1Ba3kKTlBPR0dDNWdqOU0wVytGTmw4M2dIVkN6eVgxa3VyR2t1amVHM1F1b2RoYXZBaWpqUzdnNW5Nb1J3OEpwcitUdwp4NEtKMC92ZEx3S0JnUURBSjVHMXNweXBHVjJ0YTRZSVdnSTZvekJVQ0w2UTJPQnVGeVpTcTQwOStuTlQrRW44Ck01Mi9TQm9talQzV1NEVFd0Y1l6NHNuRmp2RnRERXkxOVFLTjhiMllIUXhXQkNPUHA5a2VQQ2hsSSt4SzRLc1YKQi9DNVBNK1VhYlNCeE9iWk5PbU0vMWo1ZWttNjFFWFBtdVRUeWdCZG00ZGoyQ2VJMnNQN3FBblZtUUtCZ1FDZgp0T0N5OE9ETWxLWG1tTnNyQzNUOWhkeE9KQlBDU3haMmhRck5WUkZMSlB4WG5RU0pNTkRZcEptMjdPQnNNNm5uCnV5QSs4SVhoQlc0Lzk3M3FRK0htVXExK05rN3VIZURHSStKUEpoN2w1OEY3SFlaYWxhNFdsbTZ4azVjMm9WaHcKSUVoclUzNkpFM0lxK1ZyREFNazhlS3hyUGNvblc2cllObU4xQ0M4eG5RS0JnUURiOGZTeDBQcHg1WisxL2tCMwpxVGc2RDJYY1YyZGVWNFdsOS9JQ2owRHFqaGpXekJjaThuTjUyb3ZoSmVXcFVxWnJ1eStVWTg2cVRuK09oNGVJClNkZFRBb0F2cU1sL2gzVzdCRUdad2NsclRJSWRqTHVmK0FuRGN5S0lKY21CUG9JZGsydzZ4dkNWczJqbmdEOTMKcjZ0R3VoNHlvM2pIRkRTR0Y3dDdCRk5RSEE9PQotLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tCg=='
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           always-auth: true
           node-version: ${{ matrix.node-version }}
@@ -138,13 +141,13 @@ jobs:
           check-latest: true
       - name: Run docker-compose up
         id: docker_compose
-        uses: isbang/compose-action@v2.2.0
+        uses: hoverkraft-tech/compose-action@8be2d741e891ac9b8ac20825e6f3904149599925 # v2.2.0; verified GitHub repository redirect
         with:
           compose-file: './_dev/docker-compose-cockroachdb.yml'
       - run: node -v
       - run: npm -v
       - name: Setup Next.js cache
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: |
             ~/.npm
@@ -169,7 +172,7 @@ jobs:
       - name: e2e tests
         run: npx ts-node --log-error e2e/support/pretest.ts && npx playwright test -x
       - name: Upload e2e trace
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: ${{ !cancelled() }}
         with:
           name: playwright-report
@@ -206,11 +209,14 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   build:
+    permissions:
+      contents: write
+      packages: write
     needs: ci
     runs-on: ubuntu-latest
     steps:
       - name: Check Out Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - run: echo ${{ needs.ci.outputs.NPM_VERSION }}
       - run: echo ${{ needs.ci.outputs.IMAGE_PATH }}
@@ -221,21 +227,21 @@ jobs:
 
       - name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130 # v3
 
       - name: Login to Docker Hub
         if: github.ref == 'refs/heads/release'
-        uses: docker/login-action@v3
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
         with:
           context: ./
           file: ./Dockerfile
@@ -254,7 +260,7 @@ jobs:
 
       - name: Install Cosign
         if: github.ref == 'refs/heads/release'
-        uses: sigstore/cosign-installer@main
+        uses: sigstore/cosign-installer@b9c35392b7c1401bcc77d30c9b07cf4b1c7a7b07 # main
 
       - name: Check install!
         if: github.ref == 'refs/heads/release'
@@ -274,33 +280,33 @@ jobs:
           COSIGN_PASSWORD: ${{secrets.COSIGN_PASSWORD}}
 
       - name: Create NPM Package SBOM Report [SPDX]
-        uses: anchore/sbom-action@v0
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           format: spdx
           artifact-name: npm_sbom.spdx
           upload-artifact-retention: 1
       - name: Publish report [SPDX]
-        uses: anchore/sbom-action/publish-sbom@v0
+        uses: anchore/sbom-action/publish-sbom@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           sbom-artifact-match: ".*\\.spdx$"
       - name: Create NPM Package SBOM Report [CycloneDx]
-        uses: anchore/sbom-action@v0
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           format: cyclonedx
           artifact-name: npm_sbom.cyclonedx
           upload-artifact-retention: 1
       - name: Publish report [CycloneDx]
-        uses: anchore/sbom-action/publish-sbom@v0
+        uses: anchore/sbom-action/publish-sbom@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           sbom-artifact-match: ".*\\.cyclonedx$"
       - name: Download artifact for SPDX Report
         if: github.ref == 'refs/heads/release'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: npm_sbom.spdx
       - name: Download artifact for CycloneDx Report
         if: github.ref == 'refs/heads/release'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: npm_sbom.cyclonedx
       - name: Remove older SBOMs
@@ -314,23 +320,23 @@ jobs:
         run: mv npm_sbom.cyclonedx "./npm/sbom.cyclonedx"
 
       - name: Next Js Project SBOM Report [SPDX]
-        uses: anchore/sbom-action@v0
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           format: spdx
           artifact-name: sbom.spdx
           upload-artifact-retention: 1
       - name: Publish report [SPDX]
-        uses: anchore/sbom-action/publish-sbom@v0
+        uses: anchore/sbom-action/publish-sbom@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           sbom-artifact-match: ".*\\.spdx$"
       - name: Next Js Project SBOM Report [CycloneDx]
-        uses: anchore/sbom-action@v0
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           format: cyclonedx
           artifact-name: sbom.cyclonedx
           upload-artifact-retention: 1
       - name: Publish report [CycloneDx]
-        uses: anchore/sbom-action/publish-sbom@v0
+        uses: anchore/sbom-action/publish-sbom@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           sbom-artifact-match: ".*\\.cyclonedx$"
       - name: Remove older SBOMs
@@ -338,18 +344,18 @@ jobs:
         run: rm -rf sbom*.* || true
       - name: Download artifact for SPDX Report
         if: github.ref == 'refs/heads/release'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: sbom.spdx
       - name: Download artifact for CycloneDx Report
         if: github.ref == 'refs/heads/release'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: sbom.cyclonedx
 
       - name: Create SBOM Report [Docker][SPDX]
         if: github.ref == 'refs/heads/release'
-        uses: anchore/sbom-action@v0
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           image: ${{ needs.ci.outputs.IMAGE_PATH }}:${{ needs.ci.outputs.PUBLISH_TAG }}
           format: spdx
@@ -357,12 +363,12 @@ jobs:
           upload-artifact-retention: 1
       - name: Publish report [Docker][SPDX]
         if: github.ref == 'refs/heads/release'
-        uses: anchore/sbom-action/publish-sbom@v0
+        uses: anchore/sbom-action/publish-sbom@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           sbom-artifact-match: ".*\\.spdx$"
       - name: Create SBOM Report [Docker][CycloneDx]
         if: github.ref == 'refs/heads/release'
-        uses: anchore/sbom-action@v0
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           image: ${{ needs.ci.outputs.IMAGE_PATH }}:${{ needs.ci.outputs.PUBLISH_TAG }}
           format: cyclonedx
@@ -370,17 +376,17 @@ jobs:
           upload-artifact-retention: 1
       - name: Publish report [Docker][CycloneDx]
         if: github.ref == 'refs/heads/release'
-        uses: anchore/sbom-action/publish-sbom@v0
+        uses: anchore/sbom-action/publish-sbom@e22c389904149dbc22b58101806040fa8d37a610 # v0
         with:
           sbom-artifact-match: ".*\\.cyclonedx$"
       - name: Download artifact for SPDX Report [Docker]
         if: github.ref == 'refs/heads/release'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: docker_sbom.spdx
       - name: Download artifact for CycloneDx Report [Docker]
         if: github.ref == 'refs/heads/release'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
           name: docker_sbom.cyclonedx
       - name: Create/Clear folder [Docker]
@@ -443,12 +449,12 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - run: echo ${{ needs.ci.outputs.NPM_VERSION }}
       - run: echo ${{ needs.ci.outputs.PUBLISH_TAG }}
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           always-auth: true
           node-version: ${{ matrix.node-version }}
@@ -475,3 +481,4 @@ jobs:
         working-directory: ./${{ matrix.package }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
